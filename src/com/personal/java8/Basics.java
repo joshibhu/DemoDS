@@ -1,14 +1,12 @@
-package com.personal.ds;
+package com.personal.java8;
 
-public class SingleLinkedList {
+public class Basics {
 
-	//static int i;
-	public static void main(String[] args) {
-		SingleLinkedList sl = new SingleLinkedList();
-		sl.greet.foo();
-		
-	}
 	
+	public static void main(String[] args) {
+		Basics sl = new Basics();
+		sl.greet.foo();
+	}
 	Greet greet = () -> {
 		System.out.println("HelloWorld!");
 		System.out.println("Learn Lamda");

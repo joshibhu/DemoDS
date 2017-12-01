@@ -13,10 +13,10 @@ import java.io.Serializable;
 public class TestSerialization {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-		/*Student s = new Student("Bhuwan", "Gurgaon");
+		Student s = new Student("Bhuwan", "Gurgaon", "abc");
 		ObjectOutput oos = new ObjectOutputStream(new FileOutputStream("C:/tmp.ser"));
 		oos.writeObject(s);
-		oos.close();*/
+		oos.close();
 		
 		ObjectInput ois = new ObjectInputStream(new FileInputStream("C:/tmp.ser"));
 		Student s1 = (Student)ois.readObject();
@@ -24,7 +24,18 @@ public class TestSerialization {
 	}
 }
 
-class Student implements Serializable{
+class School {
+	private String name;
+
+	public School(String name) {
+		super();
+		this.name = name;
+	}
+	
+	
+}
+
+class Student extends School implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -35,7 +46,7 @@ class Student implements Serializable{
 	private String id;
 
 	public Student(String name, String address , String id) {
-		super();
+		super("abc");
 		this.name = name;
 		this.address = address;
 		this.id = id;

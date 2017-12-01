@@ -1,4 +1,4 @@
-package com.person.multithreading;
+package com.personal.multithreading;
 
 public class TestSynchronization {
 
