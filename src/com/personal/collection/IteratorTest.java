@@ -2,7 +2,6 @@ package com.personal.collection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -10,8 +9,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class IteratorTest {
+	
 
 	public static void main(String[] args) {
+		
 		List<String> myList = new ArrayList<>();
 		myList.add("Bhuwan");
 		myList.add("Gunjan");
@@ -44,3 +45,4 @@ public class IteratorTest {
 		}
 	}
 }
+

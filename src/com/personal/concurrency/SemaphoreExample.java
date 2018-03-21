@@ -1,7 +1,5 @@
 package com.personal.concurrency;
 
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 
 public class SemaphoreExample {
@@ -12,7 +10,7 @@ public class SemaphoreExample {
 		Thread t1 = new Thread(new Even(cb));
 		Thread t2 = new Thread(new Odd(cb));
 		t1.start();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		t2.start();
 	}
 }
@@ -29,9 +27,10 @@ class Even implements Runnable{
 	@Override
 	public void run() {
 		for (int i = 0; i <= 100; i+=2) {
-			System.out.println(i);
 			try {
 				cb.acquire();
+				System.out.println(i);
+				cb.release();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -52,8 +51,14 @@ class Odd implements Runnable{
 	@Override
 	public void run() {
 		for (int i = 1; i < 100; i+=2) {
-			cb.release();
+			try {
+				cb.acquire();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println(i);
+			cb.release();
 		}
 	}
 	

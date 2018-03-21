@@ -1,6 +1,9 @@
 package com.personal.multithreading;
 
-public class TestDeadlock {
+import java.util.Observable;
+import java.util.Observer;
+
+public class TestDeadlock implements Observer {
 
 	private String s1;
 	
@@ -36,11 +39,17 @@ public class TestDeadlock {
 		}
 	});
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		TestDeadlock td = new TestDeadlock();
 		td.s1 = "abc";
 		td.s2 = "xyz";
 		td.t1.start();
 		td.t2.start();
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }

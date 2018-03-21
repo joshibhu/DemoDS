@@ -20,7 +20,6 @@ public class BreakSingleton{
 		ObjectInput inputStr = new ObjectInputStream(new FileInputStream("C:/tmp.txt"));
 		Singleton instanceTwo = (Singleton) inputStr.readObject();
 		inputStr.close();
-		
 		System.out.println("First ::"+instanceOne.hashCode());
 		System.out.println("Second ::"+instanceTwo.hashCode());
 	}
@@ -31,7 +30,9 @@ class Singleton implements Serializable {
 	private static volatile Singleton instance;
 	
 	private Singleton() {
-		
+		if( Singleton.instance != null ) {
+			 throw new InstantiationError( "Creating of this object is not allowed." );
+		}
 	}
 	
 	public static Singleton getInstance() {

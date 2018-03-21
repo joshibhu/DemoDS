@@ -76,5 +76,4 @@ class Student extends School implements Serializable{
 		this.id = id;
 	}
 	
-	
 }

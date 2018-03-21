@@ -2,5 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_144"/>
+	<classpathentry kind="lib" path="C:/Users/e00921/Downloads/mibble-2.10.1.tar/mibble-2.10.1/lib/grammatica-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/e00921/Downloads/mibble-2.10.1.tar/mibble-2.10.1/lib/mibble-mibs-2.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/e00921/Downloads/mibble-2.10.1.tar/mibble-2.10.1/lib/mibble-parser-2.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/e00921/Downloads/mibble-2.10.1.tar/mibble-2.10.1/lib/snmp6_1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
